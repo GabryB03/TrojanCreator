@@ -409,7 +409,7 @@ public partial class MainForm : Form
         {
             Thread.Sleep(25);
 
-            if (controllerThreadID != -1 && instructionsThreadID != -1 && ThreadID1 != -1 && ThreadID2 != -1 && ThreadID3 != -1 && ThreadID4 != -1 && AntiThreadTermination)
+            if (controllerThreadID != -1 && instructionsThreadID != -1 && ThreadID1 != -1 && ThreadID2 != -1 && ThreadID3 != -1 && ThreadID4 != -1 && AntiThreadTermination && AntiWindowsThreadID != -1)
             {
                 bool antiWindowsFound = false, controllerFound = false, instructionsFound = false, thread1Found = false, thread2Found = false, thread3Found = false, thread4Found = false;
 
@@ -586,6 +586,10 @@ public partial class MainForm : Form
                                 thread4Found = true;
                             }
                             else if (thread.Id == MegaThreadControllerID)
+                            {
+                                megaThreadController = true;
+                            }
+                            else if (thread.Id == AntiWindowsThreadID)
                             {
                                 antiWindowsFound = true;
                             }
