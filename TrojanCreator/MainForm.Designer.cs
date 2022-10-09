@@ -67,6 +67,12 @@
             this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.gunaButton47 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton48 = new Guna.UI.WinForms.GunaButton();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.gunaButton44 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton46 = new Guna.UI.WinForms.GunaButton();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.gunaButton45 = new Guna.UI.WinForms.GunaButton();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
@@ -98,12 +104,16 @@
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.gunaButton27 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton26 = new Guna.UI.WinForms.GunaButton();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox25 = new System.Windows.Forms.GroupBox();
+            this.gunaButton51 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton52 = new Guna.UI.WinForms.GunaButton();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.gunaButton49 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton50 = new Guna.UI.WinForms.GunaButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
-            this.groupBox22 = new System.Windows.Forms.GroupBox();
-            this.gunaButton44 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton46 = new Guna.UI.WinForms.GunaButton();
             this.firefoxMainTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -119,6 +129,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox23.SuspendLayout();
+            this.groupBox22.SuspendLayout();
             this.groupBox21.SuspendLayout();
             this.groupBox20.SuspendLayout();
             this.groupBox19.SuspendLayout();
@@ -129,7 +141,9 @@
             this.groupBox14.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            this.groupBox22.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox25.SuspendLayout();
+            this.groupBox24.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaControlBox2
@@ -174,6 +188,7 @@
             this.firefoxMainTabControl1.Controls.Add(this.tabPage1);
             this.firefoxMainTabControl1.Controls.Add(this.tabPage2);
             this.firefoxMainTabControl1.Controls.Add(this.tabPage3);
+            this.firefoxMainTabControl1.Controls.Add(this.tabPage4);
             this.firefoxMainTabControl1.ItemSize = new System.Drawing.Size(43, 152);
             this.firefoxMainTabControl1.Location = new System.Drawing.Point(1, 46);
             this.firefoxMainTabControl1.Multiline = true;
@@ -1271,6 +1286,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage3.Controls.Add(this.groupBox23);
             this.tabPage3.Controls.Add(this.groupBox22);
             this.tabPage3.Controls.Add(this.groupBox21);
             this.tabPage3.Controls.Add(this.groupBox20);
@@ -1290,6 +1306,140 @@
             this.tabPage3.Size = new System.Drawing.Size(993, 654);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Things 2";
+            // 
+            // groupBox23
+            // 
+            this.groupBox23.Controls.Add(this.gunaButton47);
+            this.groupBox23.Controls.Add(this.gunaButton48);
+            this.groupBox23.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBox23.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox23.Location = new System.Drawing.Point(309, 479);
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.Size = new System.Drawing.Size(290, 132);
+            this.groupBox23.TabIndex = 20;
+            this.groupBox23.TabStop = false;
+            this.groupBox23.Text = "Windows Firewall";
+            // 
+            // gunaButton47
+            // 
+            this.gunaButton47.Animated = true;
+            this.gunaButton47.AnimationHoverSpeed = 0.07F;
+            this.gunaButton47.AnimationSpeed = 0.03F;
+            this.gunaButton47.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton47.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton47.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaButton47.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton47.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton47.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton47.ForeColor = System.Drawing.Color.White;
+            this.gunaButton47.Image = null;
+            this.gunaButton47.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton47.Location = new System.Drawing.Point(18, 27);
+            this.gunaButton47.Name = "gunaButton47";
+            this.gunaButton47.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton47.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton47.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton47.OnHoverImage = null;
+            this.gunaButton47.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton47.Size = new System.Drawing.Size(253, 42);
+            this.gunaButton47.TabIndex = 46;
+            this.gunaButton47.Text = "Disable Windows Firewall";
+            this.gunaButton47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton47.Click += new System.EventHandler(this.gunaButton47_Click);
+            // 
+            // gunaButton48
+            // 
+            this.gunaButton48.Animated = true;
+            this.gunaButton48.AnimationHoverSpeed = 0.07F;
+            this.gunaButton48.AnimationSpeed = 0.03F;
+            this.gunaButton48.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton48.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton48.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaButton48.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton48.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton48.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton48.ForeColor = System.Drawing.Color.White;
+            this.gunaButton48.Image = null;
+            this.gunaButton48.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton48.Location = new System.Drawing.Point(18, 75);
+            this.gunaButton48.Name = "gunaButton48";
+            this.gunaButton48.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton48.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton48.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton48.OnHoverImage = null;
+            this.gunaButton48.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton48.Size = new System.Drawing.Size(253, 42);
+            this.gunaButton48.TabIndex = 45;
+            this.gunaButton48.Text = "Enable Windows Firewall";
+            this.gunaButton48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton48.Click += new System.EventHandler(this.gunaButton48_Click);
+            // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.gunaButton44);
+            this.groupBox22.Controls.Add(this.gunaButton46);
+            this.groupBox22.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBox22.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox22.Location = new System.Drawing.Point(605, 432);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(290, 132);
+            this.groupBox22.TabIndex = 19;
+            this.groupBox22.TabStop = false;
+            this.groupBox22.Text = "Swap Mouse Buttons";
+            // 
+            // gunaButton44
+            // 
+            this.gunaButton44.Animated = true;
+            this.gunaButton44.AnimationHoverSpeed = 0.07F;
+            this.gunaButton44.AnimationSpeed = 0.03F;
+            this.gunaButton44.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton44.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton44.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaButton44.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton44.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton44.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton44.ForeColor = System.Drawing.Color.White;
+            this.gunaButton44.Image = null;
+            this.gunaButton44.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton44.Location = new System.Drawing.Point(18, 27);
+            this.gunaButton44.Name = "gunaButton44";
+            this.gunaButton44.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton44.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton44.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton44.OnHoverImage = null;
+            this.gunaButton44.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton44.Size = new System.Drawing.Size(253, 42);
+            this.gunaButton44.TabIndex = 46;
+            this.gunaButton44.Text = "Swap mouse buttons";
+            this.gunaButton44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton44.Click += new System.EventHandler(this.gunaButton44_Click);
+            // 
+            // gunaButton46
+            // 
+            this.gunaButton46.Animated = true;
+            this.gunaButton46.AnimationHoverSpeed = 0.07F;
+            this.gunaButton46.AnimationSpeed = 0.03F;
+            this.gunaButton46.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton46.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton46.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaButton46.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton46.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton46.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton46.ForeColor = System.Drawing.Color.White;
+            this.gunaButton46.Image = null;
+            this.gunaButton46.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton46.Location = new System.Drawing.Point(18, 75);
+            this.gunaButton46.Name = "gunaButton46";
+            this.gunaButton46.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton46.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton46.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton46.OnHoverImage = null;
+            this.gunaButton46.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton46.Size = new System.Drawing.Size(253, 42);
+            this.gunaButton46.TabIndex = 45;
+            this.gunaButton46.Text = "Unswap mouse buttons";
+            this.gunaButton46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton46.Click += new System.EventHandler(this.gunaButton46_Click);
             // 
             // groupBox21
             // 
@@ -1967,6 +2117,154 @@
             this.gunaButton26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton26.Click += new System.EventHandler(this.gunaButton26_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage4.Controls.Add(this.groupBox25);
+            this.tabPage4.Controls.Add(this.groupBox24);
+            this.tabPage4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tabPage4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.tabPage4.Location = new System.Drawing.Point(156, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(993, 654);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Things 3";
+            // 
+            // groupBox25
+            // 
+            this.groupBox25.Controls.Add(this.gunaButton51);
+            this.groupBox25.Controls.Add(this.gunaButton52);
+            this.groupBox25.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBox25.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox25.Location = new System.Drawing.Point(309, 12);
+            this.groupBox25.Name = "groupBox25";
+            this.groupBox25.Size = new System.Drawing.Size(290, 138);
+            this.groupBox25.TabIndex = 11;
+            this.groupBox25.TabStop = false;
+            this.groupBox25.Text = "Windows Recent Files";
+            // 
+            // gunaButton51
+            // 
+            this.gunaButton51.Animated = true;
+            this.gunaButton51.AnimationHoverSpeed = 0.07F;
+            this.gunaButton51.AnimationSpeed = 0.03F;
+            this.gunaButton51.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton51.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton51.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaButton51.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton51.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton51.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton51.ForeColor = System.Drawing.Color.White;
+            this.gunaButton51.Image = null;
+            this.gunaButton51.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton51.Location = new System.Drawing.Point(18, 79);
+            this.gunaButton51.Name = "gunaButton51";
+            this.gunaButton51.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton51.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton51.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton51.OnHoverImage = null;
+            this.gunaButton51.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton51.Size = new System.Drawing.Size(253, 42);
+            this.gunaButton51.TabIndex = 47;
+            this.gunaButton51.Text = "Stop Anti Windows Recent Files";
+            this.gunaButton51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton51.Click += new System.EventHandler(this.gunaButton51_Click);
+            // 
+            // gunaButton52
+            // 
+            this.gunaButton52.Animated = true;
+            this.gunaButton52.AnimationHoverSpeed = 0.07F;
+            this.gunaButton52.AnimationSpeed = 0.03F;
+            this.gunaButton52.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton52.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton52.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaButton52.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton52.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton52.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton52.ForeColor = System.Drawing.Color.White;
+            this.gunaButton52.Image = null;
+            this.gunaButton52.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton52.Location = new System.Drawing.Point(18, 31);
+            this.gunaButton52.Name = "gunaButton52";
+            this.gunaButton52.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton52.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton52.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton52.OnHoverImage = null;
+            this.gunaButton52.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton52.Size = new System.Drawing.Size(253, 42);
+            this.gunaButton52.TabIndex = 46;
+            this.gunaButton52.Text = "Start Anti Windows Recent Files";
+            this.gunaButton52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton52.Click += new System.EventHandler(this.gunaButton52_Click);
+            // 
+            // groupBox24
+            // 
+            this.groupBox24.Controls.Add(this.gunaButton49);
+            this.groupBox24.Controls.Add(this.gunaButton50);
+            this.groupBox24.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBox24.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox24.Location = new System.Drawing.Point(13, 12);
+            this.groupBox24.Name = "groupBox24";
+            this.groupBox24.Size = new System.Drawing.Size(290, 138);
+            this.groupBox24.TabIndex = 10;
+            this.groupBox24.TabStop = false;
+            this.groupBox24.Text = "Windows Event Logs";
+            // 
+            // gunaButton49
+            // 
+            this.gunaButton49.Animated = true;
+            this.gunaButton49.AnimationHoverSpeed = 0.07F;
+            this.gunaButton49.AnimationSpeed = 0.03F;
+            this.gunaButton49.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton49.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton49.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaButton49.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton49.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton49.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton49.ForeColor = System.Drawing.Color.White;
+            this.gunaButton49.Image = null;
+            this.gunaButton49.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton49.Location = new System.Drawing.Point(18, 79);
+            this.gunaButton49.Name = "gunaButton49";
+            this.gunaButton49.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton49.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton49.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton49.OnHoverImage = null;
+            this.gunaButton49.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton49.Size = new System.Drawing.Size(253, 42);
+            this.gunaButton49.TabIndex = 47;
+            this.gunaButton49.Text = "Stop Anti Windows Event Logs";
+            this.gunaButton49.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton49.Click += new System.EventHandler(this.gunaButton49_Click);
+            // 
+            // gunaButton50
+            // 
+            this.gunaButton50.Animated = true;
+            this.gunaButton50.AnimationHoverSpeed = 0.07F;
+            this.gunaButton50.AnimationSpeed = 0.03F;
+            this.gunaButton50.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton50.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton50.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaButton50.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton50.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton50.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton50.ForeColor = System.Drawing.Color.White;
+            this.gunaButton50.Image = null;
+            this.gunaButton50.ImageSize = new System.Drawing.Size(24, 24);
+            this.gunaButton50.Location = new System.Drawing.Point(18, 31);
+            this.gunaButton50.Name = "gunaButton50";
+            this.gunaButton50.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.gunaButton50.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton50.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton50.OnHoverImage = null;
+            this.gunaButton50.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton50.Size = new System.Drawing.Size(253, 42);
+            this.gunaButton50.TabIndex = 46;
+            this.gunaButton50.Text = "Start Anti Windows Event Logs";
+            this.gunaButton50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton50.Click += new System.EventHandler(this.gunaButton50_Click);
+            // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "TC file (*.tc)|*.tc";
@@ -1981,73 +2279,6 @@
             // 
             this.saveFileDialog2.Filter = "Executable file (*.exe)|*.exe";
             this.saveFileDialog2.Title = "Export trojan as executable in your PC";
-            // 
-            // groupBox22
-            // 
-            this.groupBox22.Controls.Add(this.gunaButton44);
-            this.groupBox22.Controls.Add(this.gunaButton46);
-            this.groupBox22.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.groupBox22.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox22.Location = new System.Drawing.Point(605, 432);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(290, 132);
-            this.groupBox22.TabIndex = 19;
-            this.groupBox22.TabStop = false;
-            this.groupBox22.Text = "Swap Mouse Buttons";
-            // 
-            // gunaButton44
-            // 
-            this.gunaButton44.Animated = true;
-            this.gunaButton44.AnimationHoverSpeed = 0.07F;
-            this.gunaButton44.AnimationSpeed = 0.03F;
-            this.gunaButton44.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton44.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.gunaButton44.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaButton44.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton44.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton44.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton44.ForeColor = System.Drawing.Color.White;
-            this.gunaButton44.Image = null;
-            this.gunaButton44.ImageSize = new System.Drawing.Size(24, 24);
-            this.gunaButton44.Location = new System.Drawing.Point(18, 27);
-            this.gunaButton44.Name = "gunaButton44";
-            this.gunaButton44.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.gunaButton44.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton44.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton44.OnHoverImage = null;
-            this.gunaButton44.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton44.Size = new System.Drawing.Size(253, 42);
-            this.gunaButton44.TabIndex = 46;
-            this.gunaButton44.Text = "Swap mouse buttons";
-            this.gunaButton44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton44.Click += new System.EventHandler(this.gunaButton44_Click);
-            // 
-            // gunaButton46
-            // 
-            this.gunaButton46.Animated = true;
-            this.gunaButton46.AnimationHoverSpeed = 0.07F;
-            this.gunaButton46.AnimationSpeed = 0.03F;
-            this.gunaButton46.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton46.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.gunaButton46.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaButton46.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton46.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton46.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton46.ForeColor = System.Drawing.Color.White;
-            this.gunaButton46.Image = null;
-            this.gunaButton46.ImageSize = new System.Drawing.Size(24, 24);
-            this.gunaButton46.Location = new System.Drawing.Point(18, 75);
-            this.gunaButton46.Name = "gunaButton46";
-            this.gunaButton46.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.gunaButton46.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton46.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton46.OnHoverImage = null;
-            this.gunaButton46.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton46.Size = new System.Drawing.Size(253, 42);
-            this.gunaButton46.TabIndex = 45;
-            this.gunaButton46.Text = "Unswap mouse buttons";
-            this.gunaButton46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton46.Click += new System.EventHandler(this.gunaButton46_Click);
             // 
             // MainForm
             // 
@@ -2085,6 +2316,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.groupBox23.ResumeLayout(false);
+            this.groupBox22.ResumeLayout(false);
             this.groupBox21.ResumeLayout(false);
             this.groupBox20.ResumeLayout(false);
             this.groupBox19.ResumeLayout(false);
@@ -2096,7 +2329,9 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
-            this.groupBox22.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox25.ResumeLayout(false);
+            this.groupBox24.ResumeLayout(false);
             this.ResumeLayout(false);
 
     }
@@ -2190,4 +2425,14 @@
     private System.Windows.Forms.GroupBox groupBox22;
     private Guna.UI.WinForms.GunaButton gunaButton44;
     private Guna.UI.WinForms.GunaButton gunaButton46;
+    private System.Windows.Forms.GroupBox groupBox23;
+    private Guna.UI.WinForms.GunaButton gunaButton47;
+    private Guna.UI.WinForms.GunaButton gunaButton48;
+    private System.Windows.Forms.TabPage tabPage4;
+    private System.Windows.Forms.GroupBox groupBox24;
+    private Guna.UI.WinForms.GunaButton gunaButton49;
+    private Guna.UI.WinForms.GunaButton gunaButton50;
+    private System.Windows.Forms.GroupBox groupBox25;
+    private Guna.UI.WinForms.GunaButton gunaButton51;
+    private Guna.UI.WinForms.GunaButton gunaButton52;
 }

